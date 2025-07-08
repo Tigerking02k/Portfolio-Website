@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayan - Computer Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <!-- Loading Screen -->
+        
+    <div class="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Nayan</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Nayan</span></h1>
+            <h2 class="typing-text">Computer Engineering Student</h2>
+            <p>Passionate about technology and innovation. Currently pursuing Bachelor of Engineering in Computer Engineering.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who I Am</h3>
+                    <p>
+                        I am a dedicated Computer Engineering student with a passion for technology and problem-solving. 
+                        Currently pursuing my Bachelor of Engineering degree, I'm constantly learning and exploring new 
+                        technologies to enhance my skills and knowledge.
+                    </p>
+                    <p>
+                        My academic journey has equipped me with a strong foundation in computer science principles, 
+                        programming languages, and engineering concepts. I'm particularly interested in software development, 
+                        web technologies, and emerging trends in the tech industry.
+                    </p>
+                    
+                    <div class="education-info">
+                        <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+                        <div class="education-item">
+                            <h5>Bachelor of Engineering - Computer Engineering</h5>
+                            <p><i class="fas fa-calendar"></i> 2021 - Present</p>
+                            <p><i class="fas fa-university"></i> University Name</p>
+                        </div>
+                    </div>
+
+                    <div class="interests">
+                        <h4><i class="fas fa-heart"></i> Interests</h4>
+                        <div class="interest-tags">
+                            <span class="interest-tag">Web Development</span>
+                            <span class="interest-tag">Machine Learning</span>
+                            <span class="interest-tag">Mobile Apps</span>
+                            <span class="interest-tag">UI/UX Design</span>
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <h4><i class="fas fa-code"></i> Technical Skills</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/300x300/667eea/ffffff?text=N" alt="Nayan" class="profile-img">
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="1000">0</div>
+                            <div class="stat-label">Hours Coding</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="15">0</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+                <button class="filter-btn" data-filter="data">Data Science</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <i class="fas fa-laptop-code"></i>
+                        <div class="project-overlay">
+                            <div class="project-tech-stack">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>E-Commerce Platform</h3>
+                            <span class="project-category">Web Development</span>
+                        </div>
+                        <p>A full-stack e-commerce website built with React, Node.js, and MongoDB. Features include user authentication, product management, payment integration, and admin dashboard.</p>
+                        <div class="project-features">
+                            <span class="feature-tag">User Authentication</span>
+                            <span class="feature-tag">Payment Gateway</span>
+                            <span class="feature-tag">Admin Panel</span>
+                            <span class="feature-tag">Responsive Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div class="project-overlay">
+                            <div class="project-tech-stack">
+                                <span>React Native</span>
+                                <span>Firebase</span>
+                                <span>Redux</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Task Management App</h3>
+                            <span class="project-category">Mobile Development</span>
+                        </div>
+                        <p>A cross-platform mobile application with drag-and-drop functionality, real-time updates, team collaboration features, and push notifications.</p>
+                        <div class="project-features">
+                            <span class="feature-tag">Cross Platform</span>
+                            <span class="feature-tag">Real-time Sync</span>
+                            <span class="feature-tag">Push Notifications</span>
+                            <span class="feature-tag">Team Collaboration</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="data">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="project-overlay">
+                            <div class="project-tech-stack">
+                                <span>Python</span>
+                                <span>Chart.js</span>
+                                <span>D3.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Data Visualization Dashboard</h3>
+                            <span class="project-category">Data Science</span>
+                        </div>
+                        <p>An interactive dashboard for data visualization using Chart.js and D3.js. Displays real-time data with customizable charts, filters, and export capabilities.</p>
+                        <div class="project-features">
+                            <span class="feature-tag">Interactive Charts</span>
+                            <span class="feature-tag">Real-time Data</span>
+                            <span class="feature-tag">Export Functionality</span>
+                            <span class="feature-tag">Custom Filters</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <i class="fas fa-robot"></i>
+                        <div class="project-overlay">
+                            <div class="project-tech-stack">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>AI Chatbot</h3>
+                            <span class="project-category">AI/ML</span>
+                        </div>
+                        <p>A natural language processing chatbot built with Python and machine learning libraries. Handles customer queries, provides intelligent responses, and learns from interactions.</p>
+                        <div class="project-features">
+                            <span class="feature-tag">Natural Language Processing</span>
+                            <span class="feature-tag">Machine Learning</span>
+                            <span class="feature-tag">Multi-language Support</span>
+                            <span class="feature-tag">Learning Capability</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <i class="fas fa-blog"></i>
+                        <div class="project-overlay">
+                            <div class="project-tech-stack">
+                                <span>Next.js</span>
+                                <span>TypeScript</span>
+                                <span>Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Personal Blog Platform</h3>
+                            <span class="project-category">Web Development</span>
+                        </div>
+                        <p>A modern blog platform built with Next.js and TypeScript. Features include markdown support, SEO optimization, dark mode, and analytics integration.</p>
+                        <div class="project-features">
+                            <span class="feature-tag">Markdown Support</span>
+                            <span class="feature-tag">SEO Optimized</span>
+                            <span class="feature-tag">Dark Mode</span>
+                            <span class="feature-tag">Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <i class="fas fa-brain"></i>
+                        <div class="project-overlay">
+                            <div class="project-tech-stack">
+                                <span>Python</span>
+                                <span>OpenCV</span>
+                                <span>TensorFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Face Recognition System</h3>
+                            <span class="project-category">AI/ML</span>
+                        </div>
+                        <p>A computer vision application that uses deep learning for face recognition and emotion detection. Can identify multiple faces in real-time with high accuracy.</p>
+                        <div class="project-features">
+                            <span class="feature-tag">Real-time Detection</span>
+                            <span class="feature-tag">Emotion Analysis</span>
+                            <span class="feature-tag">High Accuracy</span>
+                            <span class="feature-tag">Multi-face Support</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in new opportunities and collaborations. Whether you have a question, want to work together, or just want to say hello, I'd love to hear from you!</p>
+                    
+                    <div class="contact-stats">
+                        <div class="contact-stat">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Response Time</h4>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-stat">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <h4>Available For</h4>
+                                <p>Freelance & Full-time</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>nayan@example.com</p>
+                            <small>Best way to reach me</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                            <small>Available Mon-Fri, 9AM-6PM</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Your City, Country</p>
+                            <small>Open to remote work</small>
+                        </div>
+                    </div>
+
+                    <div class="social-links-contact">
+                        <h4>Follow Me</h4>
+                        <div class="social-grid">
+                            <a href="#" class="social-link-contact" title="GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="social-link-contact" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link-contact" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-link-contact" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                I agree to the privacy policy and terms of service
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>nayan@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Your City, Country</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 Nayan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
