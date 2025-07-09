@@ -623,3 +623,34 @@ if (aboutSection) {
     });
     observer.observe(aboutSection);
 } 
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Target the first contact form (the one with 'Send Me a Message')
+    var contactForm = document.querySelector('#contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Get form values
+            var name = contactForm.querySelector('[name="name"]').value;
+            var email = contactForm.querySelector('[name="email"]').value;
+            var subjectInput = contactForm.querySelector('[name="subject"]');
+            var subject = subjectInput ? subjectInput.value : '';
+            var message = contactForm.querySelector('[name="message"]').value;
+
+            // Format WhatsApp message
+            var text = `Hello, my name is ${name}\nEmail: ${email}`;
+            if (subject) text += `\nSubject: ${subject}`;
+            text += `\n${message}`;
+
+            // Encode the message for URL
+            var encodedText = encodeURIComponent(text);
+
+            // WhatsApp API URL (use 91 for India country code, change if needed)
+            var phone = '916353323798'; // 91 is India country code
+            var waUrl = `https://wa.me/${phone}?text=${encodedText}`;
+
+            // Open WhatsApp
+            window.open(waUrl, '_blank');
+        });
+    }
+}); 
