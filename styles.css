@@ -357,13 +357,16 @@ body {
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #667eea;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-    transition: transform 0.3s ease;
+    object-position: center;
+    border: 4px solid #667eea;
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+    transition: all 0.3s ease;
 }
 
 .profile-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
 }
 
 .stats-container {
@@ -667,7 +670,7 @@ body {
 .social-links-contact h4 {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: #667eea;
 }
 
 .social-grid {
@@ -890,6 +893,7 @@ body {
     .profile-img {
         width: 250px;
         height: 250px;
+        border-width: 3px;
     }
 }
 
