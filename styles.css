@@ -16,13 +16,13 @@
 }
 
 [data-theme="dark"] {
-    --text-color: #e4e4e4;
-    --bg-color: #1a1a1a;
-    --nav-bg: rgba(26, 26, 26, 0.95);
-    --section-bg: #1a1a1a;
-    --section-alt-bg: #242424;
-    --card-bg: #242424;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --text-color: #c8c8c8;
+    --bg-color: #121212;
+    --nav-bg: rgba(18, 18, 18, 0.95);
+    --section-bg: #121212;
+    --section-alt-bg: #1e1e1e;
+    --card-bg: #1e1e1e;
+    --border-color: rgba(255, 255, 255, 0.05);
 }
 
 body {
