@@ -348,25 +348,30 @@ function animateStats() {
 
 // Dark Mode Toggle
 function initDarkModeToggle() {
-    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
     if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            
-            // Save preference
-            localStorage.setItem('darkMode', isDark);
-            
-            // Update toggle text
-            this.textContent = isDark ? '☀️' : '🌙';
-        });
-        
-        // Load saved preference
-        const savedDarkMode = localStorage.getItem('darkMode');
-        if (savedDarkMode === 'true') {
-            document.body.classList.add('dark-mode');
-            darkModeToggle.textContent = '☀️';
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'dark') {
+                darkModeToggle.innerHTML = '☀️';
+            } else {
+                darkModeToggle.innerHTML = '🌙';
+            }
         }
+
+        // Handle theme toggle
+        darkModeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update toggle button icon
+            darkModeToggle.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+        });
     }
 }
 
@@ -625,32 +630,49 @@ if (aboutSection) {
 } 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Target the first contact form (the one with 'Send Me a Message')
+    // Function to handle WhatsApp redirect
+    function handleWhatsAppRedirect(form) {
+        // Get form values
+        var name = form.querySelector('[name="name"]').value;
+        var email = form.querySelector('[name="email"]').value;
+        var subjectInput = form.querySelector('[name="subject"]');
+        var messageInput = form.querySelector('[name="message"]');
+        
+        // Build the message
+        var text = `Hello, my name is ${name}\nEmail: ${email}`;
+        if (subjectInput && subjectInput.value) {
+            text += `\nSubject: ${subjectInput.value}`;
+        }
+        if (messageInput && messageInput.value) {
+            text += `\n\nMessage:\n${messageInput.value}`;
+        }
+
+        // Encode the message for URL
+        var encodedText = encodeURIComponent(text);
+
+        // WhatsApp API URL (use 91 for India country code)
+        var phone = '916353323798'; // 91 is India country code
+        var waUrl = `https://wa.me/${phone}?text=${encodedText}`;
+
+        // Open WhatsApp
+        window.open(waUrl, '_blank');
+    }
+
+    // Handle main contact form
     var contactForm = document.querySelector('#contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            // Get form values
-            var name = contactForm.querySelector('[name="name"]').value;
-            var email = contactForm.querySelector('[name="email"]').value;
-            var subjectInput = contactForm.querySelector('[name="subject"]');
-            var subject = subjectInput ? subjectInput.value : '';
-            var message = contactForm.querySelector('[name="message"]').value;
+            handleWhatsAppRedirect(contactForm);
+        });
+    }
 
-            // Format WhatsApp message
-            var text = `Hello, my name is ${name}\nEmail: ${email}`;
-            if (subject) text += `\nSubject: ${subject}`;
-            text += `\n${message}`;
-
-            // Encode the message for URL
-            var encodedText = encodeURIComponent(text);
-
-            // WhatsApp API URL (use 91 for India country code, change if needed)
-            var phone = '916353323798'; // 91 is India country code
-            var waUrl = `https://wa.me/${phone}?text=${encodedText}`;
-
-            // Open WhatsApp
-            window.open(waUrl, '_blank');
+    // Handle simple contact form
+    var contactFormSimple = document.querySelector('#contactFormSimple');
+    if (contactFormSimple) {
+        contactFormSimple.addEventListener('submit', function (e) {
+            e.preventDefault();
+            handleWhatsAppRedirect(contactFormSimple);
         });
     }
 }); 
