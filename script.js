@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function initLoadingScreen() {
     const loading = document.querySelector('.loading');
     if (loading) {
-        setTimeout(() => {
+        window.addEventListener('load', () => {
             loading.classList.add('hidden');
             setTimeout(() => {
                 loading.style.display = 'none';
-            }, 500);
-        }, 2000);
+            }, 300);
+        });
     }
 }
 
